@@ -35,6 +35,7 @@ if input_mode == "1":
             file.write(f"{username}: {count}\n")
 
 if input_mode == "2":
+    output_length = input("Enter the amount of words you want to be output(n for all words): ")
     # regex pattern to match the message portion
     message_pattern = re.compile(r"\[\d{2}:\d{2}:\d{2}\]  ?\w+: (.+)")
 
@@ -58,6 +59,12 @@ if input_mode == "2":
                     word_count.update(words)
 
     # output word counts to a text file
-    with open("word_counts.txt", "w", encoding="utf-8") as file:
-        for word, count in word_count.most_common(n=len(word_count)):
-            file.write(f"{word}: {count}\n")
+    if output_length.isdigit():
+        with open("word_counts.txt", "w", encoding="utf-8") as file:
+            for word, count in word_count.most_common(n=int(output_length)):
+                file.write(f"{word}: {count}\n")
+    else:
+        with open("word_counts.txt", "w", encoding="utf-8") as file:
+            for word, count in word_count.most_common(n=len(word_count)):
+                file.write(f"{word}: {count}\n")
+    
