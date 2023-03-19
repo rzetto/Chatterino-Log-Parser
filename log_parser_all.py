@@ -67,4 +67,3 @@ if input_mode == "2":
         with open("word_counts.txt", "w", encoding="utf-8") as file:
             for word, count in word_count.most_common(n=len(word_count)):
                 file.write(f"{word}: {count}\n")
-    
