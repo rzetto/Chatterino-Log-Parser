@@ -5,6 +5,6 @@ Simple script to to comb through your Chatterino logs and get the most commonly 
 How to use:
 1. Place all Chatterino .log files in one folder
 2. Run log_parser_all.py
-3. Type out which directory(folder) your logs are in
+3. Paste the folder path where your chatterino logs are stored in
 4. Choose if you want most usernames or words used
 5. Output will be in the same folder
